@@ -1,0 +1,19 @@
+# Compilados e bytecode Java
+*.class
+**/bin/
+**/build/
+
+# Pacotes comprimidos e arquivos de entrega anteriores
+*.zip
+
+# Scripts de automação local
+*.sh
+
+# Arquivos temporários e de sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Arquivos de log locais
+*.log
