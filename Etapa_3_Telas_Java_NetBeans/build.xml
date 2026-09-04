@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SorveteriaTropicalzinCremoso_Etapa3" default="default" basedir=".">
+    <description>Projeto Integrador - Etapa 3 - Sistema Sorveteria Tropicalzin Cremoso</description>
+    <target name="default" depends="compile">
+        <echo message="Projeto Sorveteria Tropicalzin Cremoso compilado com sucesso!"/>
+    </target>
+    
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <mkdir dir="dist"/>
+    </target>
+    
+    <target name="compile" depends="init">
+        <javac srcdir="src" destdir="build/classes" includeantruntime="false" encoding="UTF-8" source="17" target="17"/>
+    </target>
+    
+    <target name="jar" depends="compile">
+        <jar destfile="dist/SorveteriaTropicalzinCremoso.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="com.sorveteria.Principal"/>
+            </manifest>
+        </jar>
+    </target>
+    
+    <target name="run" depends="jar">
+        <java jar="dist/SorveteriaTropicalzinCremoso.jar" fork="true"/>
+    </target>
+    
+    <target name="clean">
+        <delete dir="build"/>
+        <delete dir="dist"/>
+    </target>
+</project>
